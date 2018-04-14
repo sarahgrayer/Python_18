@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Great Number Game</title>
+  </head>
+  <body>
+    <h1>Welcome to the Great Number Game!<h1>
+    <p>I am thinking of a number between 1 and 100. Take a guess!</p>
+    <form action= '/guess' method="POST">
+      <input type="text" name='guess'>
+      <button type = 'submit'>Submit</button>
+    </form>
+
+    {% if session['result'] == 'low' %}
+      <h1>Too low</h1>
+
+    {% elif session['result'] == 'high' %}
+      <h1>Too high</h1>
+
+    {% elif session ['result'] == 'correct' %}
+      <h1>You guessed correct!!!</h1>
+
+    <a href='/reset'><button>New Game</button></a>
+
+    {% endif %}
+
+  </body>
+</html>
