@@ -1,0 +1,27 @@
+body{
+  padding: 15px;
+}
+.location{
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  padding: 15px;
+  text-align: center;
+}
+.location h4{
+  color: green;
+  font-size: 24px;
+}
+.location p{
+  font-weight: bold;
+}
+.location button{
+  margin-top: 15px;
+}
+li.win{
+  color: green;
+}
+li{
+  color: red;
+}

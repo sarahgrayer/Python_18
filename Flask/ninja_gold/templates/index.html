@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Ninja Gold</title>
+    <link rel ="stylesheet" type="text/css" href={{url_for('static', filename='style.css')}}>
+  </head>
+  <body>
+    <h1>Your Gold: {{session['gold_count']}}</h1>
+    <div class = 'location'>
+      <h4>Farm</h4>
+      <p>earns 10-20 golds</p>
+      <form action= '/process' method="POST">
+        <input type='hidden' name='location' value='farm'>
+        <button input type = 'submit'>Find Gold!</button>
+      </form>
+    </div>
+    <div class = 'location'>
+      <h4>Cave</h4>
+      <p>earns 5-10 golds</p>
+      <form action= '/process' method="POST">
+        <input type='hidden' name='location' value='cave'>
+        <button input type = 'submit'>Find Gold!</button>
+      </form>
+    </div>
+    <div class = 'location'>
+      <h4>House</h4>
+      <p>earns 2-5 golds</p>
+      <form action= '/process' method="POST">
+        <input type='hidden' name='location' value='house'>
+        <button input type = 'submit'>Find Gold!</button>
+      </form>
+    </div>
+    <div class = 'location'>
+      <h4>Casino</h4>
+      <p>earns/takes 0-50 golds</p>
+      <form action= '/process' method="POST">
+        <input type='hidden' name='location' value='casino'>
+        <button input type = 'submit'>Find Gold!</button>
+      </form>
+    </div>
+    <h1>Activities:</h1>
+    <ul class = 'activities'>
+      {% for i in activities | reverse %}
+        {% if i.win %}
+          <li class="win">Earned {{ i.gold }} golds from the {{ i.location }}! {{ i.time }}</li>
+        {% else %}
+          <li class="lose">Lost {{ i.gold }} golds from the {{ i.location }}... {{ i.time }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    </div>
+    <form action='/reset'>
+      <button input type='submit'>New Game!</button>
+    </form>
+  </body>
+</html>
