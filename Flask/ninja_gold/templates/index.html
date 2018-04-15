@@ -40,7 +40,7 @@
     <h1>Activities:</h1>
     <ul class = 'activities'>
       {% for i in activities | reverse %}
-        {% if i.win %}
+        {% if i.win %} <!--green for win, red for lose. li for new line each time-->
           <li class="win">Earned {{ i.gold }} golds from the {{ i.location }}! {{ i.time }}</li>
         {% else %}
           <li class="lose">Lost {{ i.gold }} golds from the {{ i.location }}... {{ i.time }}</li>

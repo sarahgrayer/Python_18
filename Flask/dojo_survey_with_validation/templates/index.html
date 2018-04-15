@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Dojo Survey</title>
+  </head>
+  <body>
+    <h1>Dojo Survey<h1>
+
+      {% with messages = get_flashed_messages() %} <!-- function to access flashed messages -->
+        {% if messages %} <!-- Checks if there are any flashed messages -->
+          {% for message in messages %} <!-- Loopes through all messages -->
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+    <form action= '/process' method='post'>
+      Your Name: <input type='text' name="name">
+      Dojo Location: <select name='location'>
+        <option value = "Chicago">Chicago</option>
+        <option value = "Miami">Miami</option>
+        <option value = "Denver">Denver</option>
+        <option value = "LA">LA</option>
+        <option value = "Online">Online</option>
+      </select>
+      Favorite Language: <select name = "language">
+        <option value = "js">JavaScript</option>
+        <option value = "python">Python</option>
+        <option value = "html">HTML</option>
+        <option value = "ruby">Ruby</option>
+        <option value = "mean">Mean</option>
+      </select>
+      Comment:<textarea name="comment"></textarea>
+      <input type='submit' value='Button'>
+    </form>
+  </body>
+</html>

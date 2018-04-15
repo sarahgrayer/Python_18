@@ -14,18 +14,18 @@ def index():
 
 @app.route('/process', methods=["POST"])
 def process():
-    now=datetime.now().strftime("%I:%M%p, %m/%d/%Y")
+    now=datetime.now().strftime("%I:%M%p, %m/%d/%Y") #hour:minute pm, month/date/year
     location=request.form['location']
     print now
-    act = {}
-    act['time'] = now
+    act = {} #creates in an instance which we will append to session["activities"]
+    act['time'] = now #variable now defined above w/datetime function, no '' needed
     act['win'] = True
 
     if location=='farm':
         gold= random.randint(10,21)
         print gold
-        act['location'] = 'farm'
-        act['gold'] = gold
+        act['location'] = 'farm' # need '', referencing value of hidden input type
+        act['gold'] = gold #variable gold defined above w/random function, no '' needed
 
     elif location=='cave':
         gold = random.randint(5,11)
@@ -48,11 +48,13 @@ def process():
         else:
             print gold
             act['location'] = 'casino'
-            act['gold'] = abs(gold)
-            act['win'] = False
+            act['gold'] = abs(gold) #need abs value here, otherwise will print "lost -'gold' gold"
+            act['win'] = False #defined True above until here
 
     session['gold_count'] += gold
     session['activities'].append(act)
+    print (act) #[{'win': True, 'location': 'cave', 'gold': 7, 'time': '04:09PM, 04/15/2018'}]
+    print session['activities'] #[{act}, {act}, {act}..]
     return redirect('/')
 
 #if statements prevent from resetting multiple times. .pop would cause an error if nothing defined.
