@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show Page</title>
+  </head>
+  <style>
+    img{
+      width: 200px;
+      height: auto;
+      margin-left: 50px;
+    }
+    h2{
+      margin-left: 115px;
+    }
+  </style>
+  <body>
+    <h2>{{ character }}</h2>
+    <img src="{{url_for('static', filename='images/'+character+'.jpg')}}" alt="{{character}}">
+  </body>
+</html>

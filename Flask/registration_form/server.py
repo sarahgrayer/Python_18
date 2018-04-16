@@ -10,7 +10,6 @@ PASSWORD_REGEX = re.compile(r'^(?=.*?[A-Z])(?=.*?[0-9])')
 def index():
     return render_template("index.html")
 
-
 @app.route('/process', methods=["POST"])
 def process():
     print "Got Post Info"
