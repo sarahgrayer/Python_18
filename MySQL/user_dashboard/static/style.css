@@ -1,0 +1,32 @@
+body{
+  margin: 20px;
+  width: 840px;
+  height: auto;
+}
+body button{
+  display: block;
+  margin-top: 20px;
+  background-color: #2282eb;
+  color: white;
+  border: 1px solid black;
+  padding: 3px 12px;
+  box-shadow: 4px 3px 10px #686868;
+  margin-bottom: 15px;
+}
+body .welcome{
+  background-color: #e1e1e1;
+  border: 2px solid #d2d2d2;
+  padding: 15px;
+  height: 200px;
+}
+body .options{
+  display: inline-block;
+  width: 250px;
+  height: auto;
+  margin: 20px 0px 0px 20px;
+}
+body .sign_in{
+  width: 300px;
+  height: auto;
+  padding: 40px 0px 0px 100px;
+}

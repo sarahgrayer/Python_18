@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+      <title>Email Validation</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+  <body>
+    <h2>The email address you entered, (<span class="text-success">{{ email }}</span>) is a valid email address. Thank you!</h2>
+    <h3>Emails Addresses Entered:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Email:</th>
+          <th>Date Entered:</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for email in all_emails %}
+        <tr>
+          <td>{{ email['email'] }}</td>
+          <td>{{ email['created_at'].strftime("%m/%d/%y %I:%M %p")}} </td>
+          <td><a href="/remove_email/{{email['id']}}">Remove</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/">Add Another Email</a>
+  </body>
+</html>

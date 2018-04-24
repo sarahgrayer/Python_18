@@ -1,0 +1,34 @@
+body{
+  width: 720px;
+  height: auto;
+  text-align: center;
+}
+table{
+  margin-left: 185px;
+  margin-bottom: 20px;
+}
+th{
+  text-decoration: underline;
+}
+td{
+  text-align: left;
+}
+a{
+  margin-left: 10px;
+}
+h2{
+  display: inline-block;
+  width: 400px;
+  height: auto;
+  background-color: #249e00;
+  padding: 15px;
+  border: 1px solid black;
+}
+p{
+  display: inline-block;
+  width: 400px;
+  height: auto;
+  background-color: #cf2a27;
+  padding: 15px;
+  border: 1px solid black;
+}
