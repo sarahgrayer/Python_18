@@ -10,10 +10,7 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9\.\+_-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]*$')
 
 @app.route('/')
 def index():
-
-    #query = "SELECT * FROM friends" #define query
-    #friends = mysql.query_db(query) #run query w/query_db()
-    return render_template('index.html') #pass data to template
+    return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
 def process():
@@ -30,10 +27,10 @@ def process():
     else:
         query = "INSERT INTO email(email, created_at) VALUES (:email, NOW())"
         data = {
-            'email': request.form['email']
+            'email': request.form['email'] #from form, value is name='email'
         }
-        session['email'] = email
-        mysql.query_db(query, data)
+        session['email'] = email #enter value into session in order to display in '/success'
+        mysql.query_db(query, data) #function defined in mysqlconnection.py, parameters needed
         return redirect('/success')
 
 @app.route('/success')
@@ -48,6 +45,5 @@ def remove(email_id):
     data = {'id': email_id}
     mysql.query_db(query, data)
     return redirect('/success')
-
 
 app.run(debug=True)
