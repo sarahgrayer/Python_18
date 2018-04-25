@@ -1,0 +1,23 @@
+body{
+  width: 720px;
+  height: auto;
+  text-align: center;
+}
+table{
+  margin-left: 185px;
+  margin-bottom: 20px;
+}
+th{
+  text-decoration: underline;
+}
+td{
+  text-align: left;
+}
+a{
+  margin-left: 10px;
+}
+form{
+  width: 275px;
+  height: auto;
+  margin-left: 250px;
+}
