@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
   <body>
     <h2>Edit</h2>
-    <form action='/friends/<friend_id>' method='POST'>
+    <form action='/friends/{{ friend.id }}' method='POST'>
       <label for="first_name">First Name:<input type="text" name="f_name"></label>
       <label for="last_name">Last Name:<input type="text" name="l_name"></label>
       <label for="email">Email:<input type="text" name="e_mail"></label>

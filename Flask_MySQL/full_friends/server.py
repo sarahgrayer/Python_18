@@ -44,7 +44,7 @@ def update(friend_id):
         "first_name": request.form['f_name'],
         "last_name": request.form['l_name'],
         "email": request.form['e_mail'],
-        "id": (friend_id)
+        "id": (friend_id) #{{friend.id}} in .html substitues in the /friends/1 routing, then when posted to route, it's parsed out and passed as function (friend_id)
         }
     mysql.query_db(query, data)
     print "updated"
