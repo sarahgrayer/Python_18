@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Login & Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <h1>Register</h1>
+  <form action='/register' method = 'POST'>
+    <label for = "first_name">First Name: <input type="text" name="first_name"></label>
+    <label for = "last_name">Last Name: <input type="text" name="last_name"></label>
+    <label for = "email">Email Address: <input type="text" name="email"></label>
+    <label for = "password">Password: <input type="password" name="password"></label>
+    <label for = "pw_confirm">Confirm Password: <input type="password" name="pw_confirm"></label>
+    <input type = "submit" value = "Submit">
+  </form>
+
+  <h1>Login</h1>
+  <form action='/login' method = 'POST'>
+    <label for = "email">Email Address: <input type="text" name="email"></label>
+    <label for = "password">Password: <input type="password" name="password"></label>
+    <input type = "submit" value = "Submit">
+  </form>
+
+</body>
+</html>

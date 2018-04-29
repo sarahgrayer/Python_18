@@ -7,9 +7,9 @@
   <body>
     <h2>Edit</h2>
     <form action='/friends/{{ friend.id }}' method='POST'>
-      <label for="first_name">First Name:<input type="text" name="f_name"></label>
-      <label for="last_name">Last Name:<input type="text" name="l_name"></label>
-      <label for="email">Email:<input type="text" name="e_mail"></label>
+      <label for="first_name">First Name:<input type="text" name="f_name" placeholder="{{ friend.first_name }}"></label>
+      <label for="last_name">Last Name:<input type="text" name="l_name" placeholder="{{ friend.last_name }}"></label>
+      <label for="email">Email:<input type="text" name="e_mail" placeholder="{{ friend.email }}"></label>
       <input type="submit" value="Update">
     </form>
   </body>
