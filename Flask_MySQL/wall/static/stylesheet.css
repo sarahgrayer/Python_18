@@ -1,0 +1,30 @@
+body{
+  width: 1000px;
+  height: auto;
+  padding: 15px;
+}
+form{
+  width: 350px;
+  height: auto;
+  margin: 20px;
+}
+.heading h1{
+  width: 300px;
+  display: inline-block;
+}
+.heading h2{
+  width: 250px;
+  display: inline-block;
+  margin-left: 300px;
+}
+.heading a{
+  width: 100px;
+  display: inline-block;
+  margin-left: 15px;
+}
+.heading{
+  border-bottom: 3px solid black;
+}
+.comment{
+  margin-left: 25px;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+      <title>Profile</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+  <body>
+    <div class='heading'>
+      <h1>CodingDojo Wall</h1>
+      <h2>Welcome, {{ user.first_name }}!</h2>
+      <a href='/logout'>Log Out</a>
+    </div>
+    <div class='post'>
+      <h2>Post a message</h2>
+      <form action = '/post' method = 'POST'>
+        <textarea rows="4" cols ="100" name = "message"></textarea>
+        <button type = "submit">Post message</button>
+      </form>
+    </div>
+    <div class='wall'>
+      {% for messages in messages | reverse %}
+        <h3>{{ messages.first_name }} {{ messages.last_name}} - {{ messages.created_at }}</h3>
+        <p>{{ messages.message }}</p>
+        <div class='comment'>
+          <h3>Post a comment</h3>
+          <form action = '/comment/{{ messages.message_id }}' method = 'POST'>
+            <textarea rows="2" cols ="75" name = "comment"></textarea>
+            <button type = "submit">Post comment</button>
+          </form>
+          {% for comments in comments | reverse %}
+            {% if comments['messages_id'] == messages['id'] %}
+            <h4>{{ comments.first_name }} {{ comments.last_name }} - {{ comments.created_at }}</h4>
+            <p>{{ comments['comment'] }}</p>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
