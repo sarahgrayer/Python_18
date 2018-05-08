@@ -48,7 +48,7 @@ class Hospital(object):
             #make bed unavailable
                 for bed in self.beds:
                     if bed["bed_id"] == patient.bed_num:
-                        bed["available"] = True
+                        bed["available"] = True #change from False
                         break
                 print "{} successfully discharged. Bed #{} is now available".format(patient.name, patient.bed_num)
                 self.patients.remove(patient)
@@ -66,4 +66,4 @@ p2 = Patient("Justin", "bees")
 p3 = Patient("Chloe", "chocolate")
 
 #h1.admit(p1).admit(p2).discharge(1).admit(p3).display()
-h1.admit(p3).discharge(8).discharge(3).admit(p2)
+h1.admit(p3).discharge(8).discharge(3).admit(p2) #passing in the patient_id to the House functions to process
