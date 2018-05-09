@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Random Word</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'random_word/css/style.css' %}">
+  </head>
+  <body>
+    <h3>Random Word (attempt #{{request.session.attempt}})</h3>
+    <h1>{{ request.session.word }}</h1>
+    <a href = "/create"><button>Create</button></a>
+    <a href = "/reset"><button>Reset</button></a>
+  </body>
+</html>
