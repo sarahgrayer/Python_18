@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Survey Form</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'surveys/css/style.css' %}">
+  </head>
+  <body>
+    <h3>Thanks for submitting this form! You have submitted this form {{request.session.attempt}} times now.</h3>
+    <h2>Submitted Information:</h2>
+    <p>Name: {{request.session.name}}</p>
+    <p>Dojo Location: {{request.session.location}}</p>
+    <p>Favorite Language: {{request.session.language}}</p>
+    <p>Comment: {{request.session.comment}}</p>
+    <a href = "/back"><button>Go Back</button></a>
+  </body>
+</html>
