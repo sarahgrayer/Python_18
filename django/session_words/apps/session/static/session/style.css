@@ -1,0 +1,13 @@
+.right{
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  height: 500px;
+}
+span.true{
+  font-weight: bold;
+  font-size: 36px;
+}
+span.false{
+  font-size: 12px;
+}

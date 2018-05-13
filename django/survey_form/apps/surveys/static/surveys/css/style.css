@@ -1,6 +1,15 @@
-h2{
-  text-decoration: underline;
+body{
+  width: 400px;
+  height: auto;
+  display: inline-block;
 }
-h3{
-  color: purple;
+.left{
+  width: 400px;
+  height: auto;
+  display: inline-block;
+}
+.right{
+  width: 400px;
+  height: auto;
+  display: inline-block;
 }
