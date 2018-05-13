@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Amadon</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'store/css/style.css' %}">
+  </head>
+  <body>
+    <h2>Thank you for your business!</h2>
+    {% if request.session.last_transaction %}
+      <h4>We charged your credit card for ${{request.session.last_transaction}}.</h4>
+    {% endif %}
+    <h4>You have ordered {{request.session.total_items}} items so far and spent {{request.session.total_charged}} with Amadon.com!</h4>
+    <a href = "/">Go Back</a>
+  </body>
+</html>
