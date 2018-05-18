@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Semi-Restful Users</title>
+    <meta charset="utf-8"> <!--to parse special characters correctly-->
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> <!--include necessary stylesheet, bootstrap.css-->
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  </head>
+  <body>
+      <h1>User {{user.id}}</h1>
+      <p>Full name: {{user.first_name}} {{user.last_name}}</p>
+      <p>Email: {{user.email}}</p>
+      <p>Created at: {{user.created_at}}</p>
+      <div class = "actions">
+        <a href = "/users/{{ user.id }}/edit">Edit</a> | <a href = "/">Go Back</a> | <a href = "/users/{{ user.id }}/delete">Delete</a>
+      </div>
+  </body>
+</html>

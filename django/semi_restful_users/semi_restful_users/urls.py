@@ -1,4 +1,4 @@
-"""Django_App URL Configuration
+"""semi_restful_users URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -16,8 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^', include('apps.blogs.urls')), #root
-    url(r'^blogs/', include('apps.blogs.urls')), #handles lcoalhost:8000/blogs/
-    url(r'^surveys/', include('apps.surveys.urls')), #handles lcoalhost:8000/surveys/
+    url(r'^', include('apps.users.urls')),
     url(r'^users/', include('apps.users.urls')), #handles lcoalhost:8000/users/
 ]

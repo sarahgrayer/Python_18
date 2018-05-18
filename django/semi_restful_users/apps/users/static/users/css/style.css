@@ -1,0 +1,23 @@
+body{
+  margin: 20px;
+}
+table{
+  margin: 20px 0px;
+  width: 660px;
+}
+th{
+  padding-right: 15px;
+  text-decoration: underline;
+}
+a{
+  padding-right: 5px;
+  margin-top: 10px;
+  display: block;
+}
+form input{
+  display: block;
+  margin-bottom: 15px;
+}
+.actions a{
+  display: inline-block;
+}
