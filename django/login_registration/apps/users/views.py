@@ -8,18 +8,19 @@ from django.contrib import messages
 def index(request):
     return render(request, 'users/index.html')
 
-def register(request):
+def create(request):
     #process Registration, add to db, redirect to  /success
-    result = User.objects.validate_register(request.POST)
+    result = User.objects.validate_registration(request.POST)
+    print request.POST['first_name']
+    print request.POST['email']
     print "back from validating registration"
     if type(result) == list:
         for err in result:
             messages.error(request, err)
         return redirect('/')
-    else:
-        request.session['user_id'] = result.id
-        messages.success(request, "Successfully registered!")
-        return redirect('/success')
+    request.session['user_id'] = result.id
+    messages.success(request, "Successfully registered!")
+    return redirect('/success')
 
 def login(request):
     result = User.objects.validate_login(request.POST)

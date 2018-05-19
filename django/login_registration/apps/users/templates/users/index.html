@@ -14,11 +14,11 @@
       {% endfor %}
     {% endif %}
     <fieldset>
-      <form action = "/register" Method = "POST">
+      <form action = "/create" method = "POST">
       {% csrf_token %}
       First Name: <input type = 'text' name = 'first_name' placeholder=" First Name">
       Last Name: <input type = 'text' name = 'last_name' placeholder=" Last Name">
-      Email: <input type = 'email' name = 'email' placeholder=" Email">
+      Email: <input type = 'text' name = 'email' placeholder=" Email">
       Password: <input type = 'password' name = 'password' placeholder=" Password">
       Confirm Password: <input type = 'password' name = 'confirm_pw' placeholder=" Confirm Password">
       <button input type = 'submit'>Register</button>
@@ -27,8 +27,8 @@
     <fieldset>
       <form action = "/login" Method = "POST">
       {% csrf_token %}
-      Email: <input type = 'email' name = 'email' placeholder=" Email">
-      Password: <input type = 'password' name = 'pw' placeholder=" Password">
+      Email: <input type = 'text' name = 'email' placeholder=" Email">
+      Password: <input type = 'password' name = 'password' placeholder=" Password">
       <button input type = 'submit'>Login</button>
     </fieldset>
   </body>

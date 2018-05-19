@@ -8,7 +8,7 @@ NAME_REGEX = re.compile(r'^[A-Za-z]\w+$')
 
 # Create your models here.
 class UserManager(models.Manager):
-    def validate_register(self, post_data):
+    def validate_registration(self, post_data):
         errors = []
         #name
         if len(post_data['first_name'])<3 or len(post_data['last_name'])<3:
@@ -16,10 +16,9 @@ class UserManager(models.Manager):
         if not re.match(NAME_REGEX, post_data['first_name']) or not re.match(NAME_REGEX, post_data['last_name']):
             errors.append("Please enter Name's with only letters")
         #email
-        #if not re.match(EMAIL_REGEX, post_data['email']):
-        if not EMAIL_REGEX.match(post_data['email']):
+        if not re.match(EMAIL_REGEX, post_data['email']): #validates email format
             errors.append("Invalid email")
-        if len(User.objects.filter(email=post_data['email'])) > 0:
+        if len(User.objects.filter(email=post_data['email'])) > 0: #looks for email existing in db matching w/post_data
             errors.append("Email already in use")
         #pw
         if len(post_data['password'])<8:
