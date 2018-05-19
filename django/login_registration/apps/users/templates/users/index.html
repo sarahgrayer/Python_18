@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Login & Registration</title>
+    <meta charset="utf-8"> <!--to parse special characters correctly-->
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  </head>
+  <body>
+    <h1>Registration</h1>
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    <fieldset>
+      <form action = "/register" Method = "POST">
+      {% csrf_token %}
+      First Name: <input type = 'text' name = 'first_name' placeholder=" First Name">
+      Last Name: <input type = 'text' name = 'last_name' placeholder=" Last Name">
+      Email: <input type = 'email' name = 'email' placeholder=" Email">
+      Password: <input type = 'password' name = 'password' placeholder=" Password">
+      Confirm Password: <input type = 'password' name = 'confirm_pw' placeholder=" Confirm Password">
+      <button input type = 'submit'>Register</button>
+    </fieldset>
+    <h1>Login</h1>
+    <fieldset>
+      <form action = "/login" Method = "POST">
+      {% csrf_token %}
+      Email: <input type = 'email' name = 'email' placeholder=" Email">
+      Password: <input type = 'password' name = 'pw' placeholder=" Password">
+      <button input type = 'submit'>Login</button>
+    </fieldset>
+  </body>
+</html>

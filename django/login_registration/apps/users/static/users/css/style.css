@@ -1,0 +1,10 @@
+body{
+  margin: 20px;
+}
+input{
+  display: block;
+  margin-bottom: 15px;
+}
+fieldset{
+  margin-bottom: 15px;
+}
