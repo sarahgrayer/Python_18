@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ajax Posts</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  </head>
+
+  <style>
+  p{
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    padding: 3px;
+    display: inline-block;
+  }
+  </style>
+
+  <body>
+  <h1>My Posts</h1>
+  <form action='/create' method="post" class="ajax_form" id="create_note">
+    {% csrf_token %}
+    Note: <input type='text' name='content'>
+    <input type='submit' value="Submit">
+  </form>
+  <div id="placeholder">Placeholder</div>
+
+  <script>
+    $('#create_note').submit(function(e){
+      e.preventDefault()
+      console.log('came here!!!!!!')
+      $.ajax({
+        url:$(this).attr('action'),
+        method:'post',
+        data:$(this).serialize(),
+        success: function(serverResponse){
+          console.log('success')
+          $('#placeholder').html(serverResponse)
+        }
+      })
+    });
+  </script>
+
+  </body>
+</html>

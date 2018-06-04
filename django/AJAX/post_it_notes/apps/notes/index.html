@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ajax Posts</title>
+    <script = src="https://ajax.googleapis.com/aj..."></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  </head>
+  <body>
+  <h1>My Posts</h1>
+  <form action='/notes/create' method="post">
+    {% csrf_token %}
+    Note: <input type='text' name='content'>
+    <input type="submit" value="submit">
+  </form>
+
+  </body>
+</html>
